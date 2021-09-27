@@ -1,4 +1,4 @@
-package ru.adamDev.callCenter.rest;
+package ru.adamDev.callCenter.unitTest.rest;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,12 +7,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import ru.adamDev.callCenter.apiJson.NewTask;
+import ru.adamDev.callCenter.apiJson.TaskFilter;
 import ru.adamDev.callCenter.apiJson.UpdateTask;
 import ru.adamDev.callCenter.model.Task;
-import ru.adamDev.callCenter.repo.RepoTest;
-import ru.adamDev.callCenter.apiJson.TaskFilter;
+import ru.adamDev.callCenter.rest.TaskRestApi;
 import ru.adamDev.callCenter.service.response.ResponseBody;
 import ru.adamDev.callCenter.service.service.impl.TaskManagerServiceImpl;
+import ru.adamDev.callCenter.unitTest.repo.RepoTest;
 
 import java.util.Date;
 

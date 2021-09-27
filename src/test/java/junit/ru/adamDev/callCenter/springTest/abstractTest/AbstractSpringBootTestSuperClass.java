@@ -1,4 +1,4 @@
-package ru.adamDev.callCenter.abstractTest;
+package ru.adamDev.callCenter.springTest.abstractTest;
 
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

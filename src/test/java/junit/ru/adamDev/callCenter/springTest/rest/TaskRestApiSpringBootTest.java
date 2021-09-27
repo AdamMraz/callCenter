@@ -1,4 +1,4 @@
-package ru.adamDev.callCenter.rest;
+package ru.adamDev.callCenter.springTest.rest;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
@@ -6,13 +6,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import ru.adamDev.callCenter.abstractTest.AbstractSpringBootTestSuperClass;
 import ru.adamDev.callCenter.apiJson.NewTask;
+import ru.adamDev.callCenter.apiJson.TaskFilter;
 import ru.adamDev.callCenter.apiJson.UpdateTask;
 import ru.adamDev.callCenter.model.Task;
 import ru.adamDev.callCenter.repo.TaskRepo;
-import ru.adamDev.callCenter.apiJson.TaskFilter;
+import ru.adamDev.callCenter.rest.TaskRestApi;
 import ru.adamDev.callCenter.service.response.ResponseBody;
+import ru.adamDev.callCenter.springTest.abstractTest.AbstractSpringBootTestSuperClass;
 
 import java.util.Date;
 

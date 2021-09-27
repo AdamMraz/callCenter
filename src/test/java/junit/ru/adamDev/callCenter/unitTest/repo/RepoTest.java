@@ -1,4 +1,4 @@
-package ru.adamDev.callCenter.repo;
+package ru.adamDev.callCenter.unitTest.repo;
 
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
@@ -7,6 +7,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.util.Assert;
 import ru.adamDev.callCenter.model.Task;
+import ru.adamDev.callCenter.repo.TaskRepo;
 import ru.adamDev.callCenter.service.enums.TaskStatus;
 
 import java.util.ArrayList;

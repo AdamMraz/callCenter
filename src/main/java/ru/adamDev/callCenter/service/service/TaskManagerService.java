@@ -1,12 +1,12 @@
 package ru.adamDev.callCenter.service.service;
 
+import ru.adamDev.callCenter.apiJson.TaskFilter;
 import ru.adamDev.callCenter.apiJson.UpdateTask;
 import ru.adamDev.callCenter.model.Task;
 import ru.adamDev.callCenter.service.exception.TaskFilterDateIsNullException;
 import ru.adamDev.callCenter.service.exception.TaskIllegalNumberException;
 import ru.adamDev.callCenter.service.exception.TaskIsExistException;
 import ru.adamDev.callCenter.service.exception.TaskNotFoundException;
-import ru.adamDev.callCenter.apiJson.TaskFilter;
 
 import java.util.List;
 

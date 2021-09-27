@@ -1,19 +1,20 @@
-package ru.adamDev.callCenter.service.service.impl;
+package ru.adamDev.callCenter.unitTest.service.service.impl;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.slf4j.LoggerFactory;
+import ru.adamDev.callCenter.apiJson.TaskFilter;
 import ru.adamDev.callCenter.apiJson.UpdateTask;
 import ru.adamDev.callCenter.model.Task;
-import ru.adamDev.callCenter.repo.RepoTest;
 import ru.adamDev.callCenter.service.exception.TaskFilterDateIsNullException;
 import ru.adamDev.callCenter.service.exception.TaskIllegalNumberException;
 import ru.adamDev.callCenter.service.exception.TaskIsExistException;
 import ru.adamDev.callCenter.service.exception.TaskNotFoundException;
-import ru.adamDev.callCenter.apiJson.TaskFilter;
 import ru.adamDev.callCenter.service.service.TaskManagerService;
+import ru.adamDev.callCenter.service.service.impl.TaskManagerServiceImpl;
+import ru.adamDev.callCenter.unitTest.repo.RepoTest;
 
 import java.util.Date;
 import java.util.List;
