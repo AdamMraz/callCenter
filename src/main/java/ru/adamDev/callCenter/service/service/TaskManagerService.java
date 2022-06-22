@@ -19,7 +19,7 @@ public interface TaskManagerService {
      * @throws TaskIsExistException It is thrown out if a task with such an order number already exists
      * @throws TaskIllegalNumberException It is thrown if the task number is 0 or a negative number
      */
-    void saveTask (Task task) throws TaskIsExistException, TaskIllegalNumberException;
+    void saveTask(Task task) throws TaskIsExistException, TaskIllegalNumberException;
 
     /**
      * Getting tasks by filters
@@ -28,7 +28,7 @@ public interface TaskManagerService {
      * @return List of found tasks
      * @throws TaskFilterDateIsNullException It is thrown out if the filter does not have an initial and/or final date
      */
-    List<Task> finedTasks (TaskFilter filter) throws TaskFilterDateIsNullException;
+    List<Task> finedTasks(TaskFilter filter) throws TaskFilterDateIsNullException;
 
     /**
      * Update task
@@ -37,5 +37,5 @@ public interface TaskManagerService {
      * @throws TaskIllegalNumberException It is thrown if the task number is 0 or a negative number
      * @throws TaskNotFoundException It is thrown out if it is not found
      */
-    void updateTask (UpdateTask updateTaskModel) throws TaskIllegalNumberException, TaskNotFoundException;
+    void updateTask(UpdateTask updateTaskModel) throws TaskIllegalNumberException, TaskNotFoundException;
 }

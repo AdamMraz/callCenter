@@ -13,7 +13,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @ApiResponses(value = {
-        @ApiResponse(responseCode = "400",
+        @ApiResponse(responseCode = "200",
                 description = "The update was completed successfully",
                 content = {
                         @Content(schema = @Schema(implementation = ResponseBody.class),

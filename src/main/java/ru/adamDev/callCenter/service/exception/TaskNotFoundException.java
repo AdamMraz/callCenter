@@ -9,7 +9,7 @@ public class TaskNotFoundException extends TaskException {
         super();
     }
 
-    public TaskNotFoundException (String msg) {
+    public TaskNotFoundException(String msg) {
         super(msg);
     }
 }

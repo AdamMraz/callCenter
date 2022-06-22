@@ -47,12 +47,9 @@ public class TaskRestApi {
     @TaskAddApiResponses
     @SneakyThrows
     @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity add (@RequestBody NewTask requestBody) {
-
+    public ResponseEntity add(@RequestBody NewTask requestBody) {
         Task task = new Task(requestBody.getNumber());
-
         taskManagerService.saveTask(task);
-
         return new ResponseEntity(new ResponseBody(
                 new Date().getTime(),
                 HttpStatus.OK.value(),
@@ -69,8 +66,7 @@ public class TaskRestApi {
     @TaskGetApiResponses
     @SneakyThrows
     @PostMapping(value = "/get", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity get (@RequestBody TaskFilter filter) {
-
+    public ResponseEntity get(@RequestBody TaskFilter filter) {
         return new ResponseEntity(new ResponseBody(
                 new Date().getTime(),
                 HttpStatus.OK.value(),
@@ -87,10 +83,8 @@ public class TaskRestApi {
     @TaskUpdateApiResponses
     @SneakyThrows
     @PostMapping(value = "/update", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity update (@RequestBody UpdateTask requestBody) {
-
+    public ResponseEntity update(@RequestBody UpdateTask requestBody) {
         taskManagerService.updateTask(requestBody);
-
         return new ResponseEntity(new ResponseBody(
                 new Date().getTime(),
                 HttpStatus.OK.value(),

@@ -26,16 +26,16 @@ import static org.assertj.core.api.Assertions.catchThrowable;
 class TaskManagerServiceImplTest {
 
     private final RepoTest repoTest = new RepoTest();
-    private final TaskManagerService taskManagerService = new TaskManagerServiceImpl(this.repoTest, LoggerFactory.getLogger(TaskManagerServiceImpl.class));
+    private final TaskManagerService taskManagerService
+            = new TaskManagerServiceImpl(this.repoTest, LoggerFactory.getLogger(TaskManagerServiceImpl.class));
 
     @BeforeEach
-    public void clearDb() {
+    void clearDb() {
         repoTest.deleteAll();
     }
 
     @Test
-    public void saveTaskZeroNumber() {
-
+    void saveTaskZeroNumber() {
         Task task = new Task(0L);
         Throwable throwable = catchThrowable(() -> taskManagerService.saveTask(task));
         assertThat(throwable).isInstanceOf(TaskIllegalNumberException.class);
@@ -43,8 +43,7 @@ class TaskManagerServiceImplTest {
     }
 
     @Test
-    public void saveTaskIsExist() throws TaskIsExistException, TaskIllegalNumberException {
-
+    void saveTaskIsExist() throws TaskIsExistException, TaskIllegalNumberException {
         Task task = new Task(1L);
         taskManagerService.saveTask(task);
         Throwable throwable = catchThrowable(() -> taskManagerService.saveTask(task));
@@ -53,16 +52,14 @@ class TaskManagerServiceImplTest {
     }
 
     @Test
-    public void saveTaskDefault() throws TaskIsExistException, TaskIllegalNumberException {
-
+    void saveTaskDefault() throws TaskIsExistException, TaskIllegalNumberException {
         Task task = new Task(1L);
         taskManagerService.saveTask(task);
         Assert.assertEquals(repoTest.findByNumber(1L), task);
     }
 
     @Test
-    public void finedTasksNullDate() {
-
+    void finedTasksNullDate() {
         TaskFilter filter = new TaskFilter();
         Throwable throwable = catchThrowable(() -> taskManagerService.finedTasks(filter));
         assertThat(throwable).isInstanceOf(TaskFilterDateIsNullException.class);
@@ -70,8 +67,7 @@ class TaskManagerServiceImplTest {
     }
 
     @Test
-    public void finedTasksOnlyStartDate() {
-
+    void finedTasksOnlyStartDate() {
         TaskFilter filter = new TaskFilter();
         filter.setStartDate(new Date());
         Throwable throwable = catchThrowable(() -> taskManagerService.finedTasks(filter));
@@ -80,8 +76,7 @@ class TaskManagerServiceImplTest {
     }
 
     @Test
-    public void finedTasksOnlyFinishDate() {
-
+    void finedTasksOnlyFinishDate() {
         TaskFilter filter = new TaskFilter();
         filter.setStartDate(null);
         filter.setFinishDate(new Date());
@@ -91,21 +86,17 @@ class TaskManagerServiceImplTest {
     }
 
     @Test
-    public void finedTasksDefault() throws TaskIsExistException, TaskIllegalNumberException, TaskFilterDateIsNullException {
-
+    void finedTasksDefault() throws TaskIsExistException, TaskIllegalNumberException, TaskFilterDateIsNullException {
         Task task = new Task(1);
         task.setCreateDate(new Date(0));
         taskManagerService.saveTask(task);
         taskManagerService.saveTask(new Task(2));
         taskManagerService.saveTask(new Task(3));
-
         TaskFilter filter = new TaskFilter();
         filter.setStartDate(new Date(0));
         filter.setFinishDate(new Date(Long.MAX_VALUE));
         List<Task> taskListThree = taskManagerService.finedTasks(filter);
         Assert.assertEquals(taskListThree.size(), 3);
-
-
         filter.setStartDate(new Date(1));
         filter.setFinishDate(new Date(Long.MAX_VALUE));
         List<Task> taskListTwo = taskManagerService.finedTasks(filter);
@@ -114,7 +105,6 @@ class TaskManagerServiceImplTest {
 
     @Test
     public void updateTaskZeroNumber() {
-
         UpdateTask updateTaskModel = new UpdateTask();
         Throwable throwable = catchThrowable(() -> taskManagerService.updateTask(updateTaskModel));
         assertThat(throwable).isInstanceOf(TaskIllegalNumberException.class);
@@ -123,7 +113,6 @@ class TaskManagerServiceImplTest {
 
     @Test
     public void updateTaskDefault() {
-
         UpdateTask updateTaskModel = new UpdateTask();
         updateTaskModel.setTaskId(1);
         Throwable throwable = catchThrowable(() -> taskManagerService.updateTask(updateTaskModel));

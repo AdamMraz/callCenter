@@ -16,7 +16,7 @@ import java.util.Date;
 public class TaskExceptionHandlerController {
 
     @ExceptionHandler(TaskException.class)
-    public ResponseEntity taskException (TaskException e) {
+    public ResponseEntity taskException(TaskException e) {
         return new ResponseEntity(new ResponseBody(new Date().getTime(),
                     HttpStatus.BAD_REQUEST.value(),
                     HttpStatus.BAD_REQUEST.getReasonPhrase(),

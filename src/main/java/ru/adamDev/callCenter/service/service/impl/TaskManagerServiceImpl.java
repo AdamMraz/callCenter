@@ -34,10 +34,6 @@ public class TaskManagerServiceImpl implements TaskManagerService {
         this.LOG = log;
     }
 
-//    public void setLOG (Logger log) {
-//        this.LOG = log;
-//    }
-
     /**
      * Save new Task. Cannot save task with number <= 0.
      *

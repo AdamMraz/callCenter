@@ -9,7 +9,7 @@ public class TaskFilterDateIsNullException extends TaskException {
         super();
     }
 
-    public TaskFilterDateIsNullException (String msg) {
+    public TaskFilterDateIsNullException(String msg) {
         super(msg);
     }
 }

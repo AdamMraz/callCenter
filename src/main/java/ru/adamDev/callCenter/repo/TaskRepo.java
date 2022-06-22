@@ -24,7 +24,7 @@ public interface TaskRepo extends JpaRepository<Task, Long>, JpaSpecificationExe
      * @return The founded task
      */
     @Query("SELECT t FROM Task t WHERE t.number = :number")
-    Task findByNumber (@Param("number") Long number);
+    Task findByNumber(@Param("number") Long number);
 
     /**
      * Search for a tasks by filters
@@ -39,8 +39,8 @@ public interface TaskRepo extends JpaRepository<Task, Long>, JpaSpecificationExe
             "AND (t.createDate <= :finishDate) " +
             "AND (t.number = :number OR :number IS NULL) " +
             "AND (t.status = :status OR :status IS NULL)")
-    List<Task> findByFilter (@Param("startDate") Date startDate,
-                             @Param("finishDate") Date finishDate,
-                             @Param("number") Long number,
-                             @Param("status") TaskStatus status);
+    List<Task> findByFilter(@Param("startDate") Date startDate,
+                            @Param("finishDate") Date finishDate,
+                            @Param("number") Long number,
+                            @Param("status") TaskStatus status);
 }

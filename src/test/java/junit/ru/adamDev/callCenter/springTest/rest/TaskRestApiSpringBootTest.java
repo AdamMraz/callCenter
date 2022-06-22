@@ -31,7 +31,6 @@ class TaskRestApiSpringBootTest extends AbstractSpringBootTestSuperClass {
 
     @Test
     void add() {
-
         NewTask taskModel = new NewTask();
         taskModel.setNumber(1L);
         ResponseEntity response = api.add(taskModel);
@@ -45,13 +44,10 @@ class TaskRestApiSpringBootTest extends AbstractSpringBootTestSuperClass {
 
     @Test
     void get() {
-
         taskRepo.save(new Task(1L));
-
         TaskFilter filter = new TaskFilter();
         filter.setStartDate(new Date(0));
         filter.setFinishDate(new Date());
-
         ResponseEntity response = api.get(filter);
         ResponseBody body = (ResponseBody) response.getBody();
         Assert.assertEquals(response, new ResponseEntity(new ResponseBody(
@@ -63,13 +59,10 @@ class TaskRestApiSpringBootTest extends AbstractSpringBootTestSuperClass {
 
     @Test
     void update() {
-
         taskRepo.save(new Task(1L));
         Long taskId = taskRepo.findByNumber(1L).getTaskId();
-
         UpdateTask updateTaskModel = new UpdateTask();
         updateTaskModel.setTaskId(taskId);
-
         ResponseEntity response = api.update(updateTaskModel);
         ResponseBody body = (ResponseBody) response.getBody();
         Assert.assertEquals(response, new ResponseEntity(new ResponseBody(

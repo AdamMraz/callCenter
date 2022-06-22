@@ -10,6 +10,7 @@ import javax.validation.constraints.Size;
  */
 @Data
 public class NewTask {
+
     @NotBlank
     @Size(min = 1)
     private long number;

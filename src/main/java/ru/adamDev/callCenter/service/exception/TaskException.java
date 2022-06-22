@@ -9,7 +9,7 @@ public class TaskException extends Exception {
         super();
     }
 
-    public TaskException (String msg) {
+    public TaskException(String msg) {
         super(msg);
     }
 }

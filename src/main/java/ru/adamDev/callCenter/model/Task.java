@@ -20,22 +20,18 @@ import java.util.Objects;
 public class Task {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "seqTask", allocationSize = 1, sequenceName = "seq_task")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqTask")
     private long taskId;
-
     @NotNull
     private long number;
-
     @Column(name = "create_date")
     @NotNull
     private Date createDate;
-
     @Column(name = "update_date")
     private Date updateDate;
-
     @NotNull
     private TaskStatus status;
-
     private String comment;
 
     public Task(long number) {
@@ -52,8 +48,10 @@ public class Task {
         Task task = (Task) o;
         return taskId == task.taskId &&
                 number == task.number &&
-                Objects.equals((createDate != null ? createDate.getTime() : null), (task.createDate != null ? task.createDate.getTime() : null)) &&
-                Objects.equals((updateDate != null ? updateDate.getTime() : null), (task.updateDate != null ? task.updateDate.getTime() : null)) &&
+                Objects.equals(
+                        (createDate != null ? createDate.getTime() : null), (task.createDate != null ? task.createDate.getTime() : null)) &&
+                Objects.equals(
+                        (updateDate != null ? updateDate.getTime() : null), (task.updateDate != null ? task.updateDate.getTime() : null)) &&
                 status == task.status &&
                 Objects.equals(comment, task.comment);
     }
