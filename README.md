@@ -40,19 +40,20 @@
 ## Используемые технологии:
 
 1. Java 11
-2. Spring Framework Boot 2.5.4
+2. Apache Maven 3.6.3
+3. Spring Framework Boot 2.5.4
    1. Starter
    2. Starter Web
    3. Starter Data Jpa
    4. Starter Test
-3. Spring Doc 1.5.10 - Документация
-   1. Openapi Ui
-4. Slf4j 1.7.32 - Логирование
-5. PostgreSQL 42.2.23 - Драйвер для соединения с базой данных
-6. Lombok 1.18.20
-7. FlywayDB 7.15.0 - Миграция БД
-8. H2Database 1.4.200 - БД для тестирования
-9. JUnit 4.13.2
+4. Spring Doc 1.5.10 - Документация
+   1. OpenAPI UI
+5. Slf4j 1.7.32 - Логирование
+6. PostgreSQL 42.2.23
+7. Lombok 1.18.20
+8. FlywayDB 7.15.0 - Миграция БД
+9. H2Database 1.4.200 - БД для тестирования
+10. JUnit 4.13.2
 
 ## Методы и параметры находящиеся в /api/v1/task:
 
